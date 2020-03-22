@@ -16,9 +16,11 @@ add_action( 'wp_enqueue_scripts', 'neve_child_load_css', 20 );
 /**
  * Add image sizes.
  */
-add_image_size( 'ths-twocol-image', 550, 550, array( 'center', 'center' ) );
-add_image_size( 'ths-post-image', 684, 684, false );
-add_image_size( 'ths-threecol-featured-image', 313, 313, false );
+if ( function_exists( 'add_image_size' ) ) {
+	add_image_size( 'ths-twocol-image', 550, 550, array( 'center', 'center' ) );
+	add_image_size( 'ths-post-image', 684, 684, false );
+	add_image_size( 'ths-threecol-featured-image', 313, 313, false );
+}
 /**
  * Select image sizes from admin.
  */
